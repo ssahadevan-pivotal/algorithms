@@ -1,0 +1,5 @@
+applications:
+ - name: algorithms
+   memory: 1G
+   random-route: true
+   path: ./target/algorithms-0.0.1-SNAPSHOT.jar

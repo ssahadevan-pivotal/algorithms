@@ -21,8 +21,8 @@ public class AlgorithmController {
 	    }
 	    
 	    // Greatest Common Divisor  - Test
-	    @GetMapping("/gcm")
-	    public String gcm() {
+	    @GetMapping("/gcd")
+	    public String gcd() {
 	    	GreatestCommonDivisor gcd = new GreatestCommonDivisor( 10, 2);
 			System.out.println( "Result is " + gcd.getResult());
 			return (  "Result is " + gcd.getResult() );
