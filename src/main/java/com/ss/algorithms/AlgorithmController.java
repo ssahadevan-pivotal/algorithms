@@ -23,40 +23,37 @@ public class AlgorithmController {
 	  //  public CredhubValueController(CredhubProperties credhubProperties) {
 	  //      this.credhubProperties = credhubProperties;
 	  //  }
+	  String usage="Usage: http://localhost:8080/arithmetic?firstValue=15&secondValue=5&operator=add" ;
 	
 	   @GetMapping("/")
 	   public String getIndex() {
 		   return "index.html" ;
 	   }
+	   
+	   @GetMapping("/arithmetic")
+	    public String getArithmetic(@RequestParam(value="firstValue", defaultValue="10") String firstValue 
+	    		             , @RequestParam(value="secondValue", defaultValue="10") String secondValue
+	    		             , @RequestParam(value="operator", defaultValue="add") String operator
+	    		)  {
+	    	int firstVal = Integer.parseInt( firstValue ) ;
+	    	int secondVal = Integer.parseInt( secondValue ) ;
+	    	// String usage="Usage: http://localhost:8080/arithmetic?firstValue=15&secondValue=5&operator=add" ;
+	    	Arithmetic arithmeticClass;
+			try {
+				arithmeticClass = new Arithmetic( firstVal , secondVal, operator);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return( usage);
+			}
+			System.out.println( "Result is " + arithmeticClass.getResult());
+			return (  "Result is " + arithmeticClass.getResult() );
+			
+	    	//return ("5") ;
+	    	
+	    }
 
-	    @GetMapping("/add")
-	    public String getAdd(@RequestParam(value="firstValue", defaultValue="10") String firstValue 
-	    		             , @RequestParam(value="secondValue", defaultValue="10") String secondValue
-	    		)   {
-	    	int firstVal = Integer.parseInt( firstValue ) ;
-	    	int secondVal = Integer.parseInt( secondValue ) ;
-	    	Add addClass = new Add( firstVal , secondVal);
-			System.out.println( "Result is " + addClass.getResult());
-			return (  "Result is " + addClass.getResult() );
-			
-	    	//return ("5") ;
-	    	
-	    }
-	    
-	    @GetMapping("/subtract")
-	    public String getSubrtract(@RequestParam(value="firstValue", defaultValue="10") String firstValue 
-	    		             , @RequestParam(value="secondValue", defaultValue="10") String secondValue
-	    		)   {
-	    	int firstVal = Integer.parseInt( firstValue ) ;
-	    	int secondVal = Integer.parseInt( secondValue ) ;
-	        Subtract subtractClass = new Subtract( firstVal , secondVal);
-			System.out.println( "Result is " + subtractClass.getResult());
-			return (  "Result is " + subtractClass.getResult() );
-			
-	    	//return ("5") ;
-	    	
-	    }
-	    
+	       
 	    // Greatest Common Divisor  - Test
 	    @GetMapping("/gcd")
 	    public String gcd( 
