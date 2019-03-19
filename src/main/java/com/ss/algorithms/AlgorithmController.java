@@ -3,6 +3,17 @@ package com.ss.algorithms;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+
+
+
+// import hello.Model;
+// import hello.RequestParam;
+
 
 @RestController
 public class AlgorithmController {
@@ -12,12 +23,24 @@ public class AlgorithmController {
 	  //  public CredhubValueController(CredhubProperties credhubProperties) {
 	  //      this.credhubProperties = credhubProperties;
 	  //  }
+	
+	   @GetMapping("/")
+	   public String getIndex() {
+		   return "index.html" ;
+	   }
 
 	    @GetMapping("/add")
-	    public String getAdd() {
-	    	Add addClass = new Add ( 11, 21);
+	    public String getAdd(@RequestParam(value="firstValue", defaultValue="10") String firstValue 
+	    		             , @RequestParam(value="secondValue", defaultValue="10") String secondValue
+	    		)   {
+	    	int firstVal = Integer.parseInt( firstValue ) ;
+	    	int secondVal = Integer.parseInt( secondValue ) ;
+	    	Add addClass = new Add( firstVal , secondVal);
 			System.out.println( "Result is " + addClass.getResult());
 			return (  "Result is " + addClass.getResult() );
+			
+	    	//return ("5") ;
+	    	
 	    }
 	    
 	    // Greatest Common Divisor  - Test
@@ -27,6 +50,8 @@ public class AlgorithmController {
 			System.out.println( "Result is " + gcd.getResult());
 			return (  "Result is " + gcd.getResult() );
 	    }
+	    
+	   
 	}
 
 
