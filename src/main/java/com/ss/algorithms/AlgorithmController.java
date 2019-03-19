@@ -43,10 +43,29 @@ public class AlgorithmController {
 	    	
 	    }
 	    
+	    @GetMapping("/subtract")
+	    public String getSubrtract(@RequestParam(value="firstValue", defaultValue="10") String firstValue 
+	    		             , @RequestParam(value="secondValue", defaultValue="10") String secondValue
+	    		)   {
+	    	int firstVal = Integer.parseInt( firstValue ) ;
+	    	int secondVal = Integer.parseInt( secondValue ) ;
+	        Subtract subtractClass = new Subtract( firstVal , secondVal);
+			System.out.println( "Result is " + subtractClass.getResult());
+			return (  "Result is " + subtractClass.getResult() );
+			
+	    	//return ("5") ;
+	    	
+	    }
+	    
 	    // Greatest Common Divisor  - Test
 	    @GetMapping("/gcd")
-	    public String gcd() {
-	    	GreatestCommonDivisor gcd = new GreatestCommonDivisor( 10, 2);
+	    public String gcd( 
+	    		         @RequestParam(value="firstValue", defaultValue="10") String firstValue 
+	                     ,@RequestParam(value="secondValue", defaultValue="10") String secondValue
+	    		) {
+	    	int firstVal = Integer.parseInt( firstValue ) ;
+	    	int secondVal = Integer.parseInt( secondValue ) ;
+	    	GreatestCommonDivisor gcd = new GreatestCommonDivisor( firstVal, secondVal);
 			System.out.println( "Result is " + gcd.getResult());
 			return (  "Result is " + gcd.getResult() );
 	    }
