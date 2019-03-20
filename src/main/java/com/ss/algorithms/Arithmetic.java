@@ -6,15 +6,19 @@ public class Arithmetic {
 	//private int firstValue;
 	//private int secondValue ;
 	private int result;
+	boolean debug = false;
 	
 	public Arithmetic(int firstVal , int secondVal , String operator) throws Exception
 	{
 		//firstValue = firstVal;
 		//secondValue= secondVal;
+		if ( debug )
+		{
 		System.out.println("firstVal=" + firstVal
 				         + "secondVal =" + secondVal 
 				         + "operator is " + operator 
 				         );
+		}
 		
 		if ( operator.equalsIgnoreCase("add") || operator.equalsIgnoreCase("+") )
 		{

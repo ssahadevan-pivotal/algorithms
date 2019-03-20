@@ -28,5 +28,6 @@ Validate the app is deployed and running:
  Execute Sample on PWS:
  
  https://algorithms-empathic-wolverine.cfapps.io/arithmetic?firstValue=100&secondValue=5&operator=multiply
- https://algorithms-empathic-wolverine.cfapps.io/fibonaccisequence
+ https://algorithms-empathic-wolverine.cfapps.io/fibonacciseries?resultCount=7
+ 
 

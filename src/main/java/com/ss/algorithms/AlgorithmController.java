@@ -67,16 +67,36 @@ public class AlgorithmController {
 			return (  "Result is " + gcd.getResult() );
 	    }
 	    
-	    @GetMapping("/fibonaccisequence")
-	    public String getfibonaccisequence(@RequestParam(value="resultCount", defaultValue="10") String resultCount ) 
+	    @GetMapping("/fibonacciseries")
+	    public String getfibonacciseries(@RequestParam(value="resultCount", defaultValue="10") String resultCount ) 
 	    {	             
 	    	int count = Integer.parseInt( resultCount ) ;
 	    	//int secondVal = Integer.parseInt( secondValue ) ;
 	    	// String usage="Usage: http://localhost:8080/arithmetic?firstValue=15&secondValue=5&operator=add" ;
-	    	String result = "0, 1, 1, 2, 3, 5, 8" ;
+	    	String result = "0, 1" ;
+	    	Arithmetic arithmetic = null ;
+	    	int firstVal = 0;
+	    	int secondVal = 1;
+	    	String operator="add";
+	    	
+	    	
+	    	while ( count > 0 )
+	    	{
+	    		try {
+					arithmetic= new Arithmetic( firstVal, secondVal , operator );
+					firstVal = secondVal ;
+					secondVal = arithmetic.getResult() ;
+					result = result + ", " + secondVal ;
+					count-- ; 
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return usage;
+				}
+	    	}
 	    	
 			//System.out.println( "Result is " + arithmeticClass.getResult());
-			return (  "Result is " + result );
+			return (  "Fibonacci series for " + resultCount + " numbers is " + result );
 			
 	    	
 	    }
