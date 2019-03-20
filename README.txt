@@ -3,6 +3,7 @@ Spring app to showcase basic algorithms.
 Note: This is a work in Progress
 
 Sample Usage: http://localhost:8080/arithmetic?firstValue=15&secondValue=5&operator=add"
+              
 
 To compile:
 
@@ -27,4 +28,5 @@ Validate the app is deployed and running:
  Execute Sample on PWS:
  
  https://algorithms-empathic-wolverine.cfapps.io/arithmetic?firstValue=100&secondValue=5&operator=multiply
+ https://algorithms-empathic-wolverine.cfapps.io/fibonaccisequence
 
