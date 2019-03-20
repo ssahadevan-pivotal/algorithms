@@ -101,6 +101,28 @@ public class AlgorithmController {
 	    	
 	    }
 	    
+	    // Max
+	    @GetMapping("/max")
+	    public String getMax( 
+	    		         @RequestParam(value="firstValue", defaultValue="10") String firstValue 
+	                     ,@RequestParam(value="secondValue", defaultValue="10") String secondValue
+	    		) {
+	    	int firstVal = Integer.parseInt( firstValue ) ;
+	    	int secondVal = Integer.parseInt( secondValue ) ;
+	    	String result;
+	    	Max max;
+			try {
+				max = new Max( firstVal, secondVal);
+				result=("Result is " +  max.getResult() ) ;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				result= "Error: Incorrect usage";
+			}
+			
+			return ( result );
+	    }
+	    
 	   
 	}
 

@@ -2,6 +2,12 @@ Spring app to showcase basic algorithms.
 
 Note: This is a work in Progress
 
+Execute Sample on PWS:
+ 
+ https://algorithms-empathic-wolverine.cfapps.io/arithmetic?firstValue=100&secondValue=5&operator=multiply
+ https://algorithms-empathic-wolverine.cfapps.io/fibonacciseries?resultCount=7
+ https://algorithms-empathic-wolverine.cfapps.io/max?firstValue=100&secondValue=5
+
 Sample Usage: http://localhost:8080/arithmetic?firstValue=15&secondValue=5&operator=add"
               
 
@@ -25,9 +31,5 @@ Validate the app is deployed and running:
     cf apps | grep -i algorithms
     
     
- Execute Sample on PWS:
- 
- https://algorithms-empathic-wolverine.cfapps.io/arithmetic?firstValue=100&secondValue=5&operator=multiply
- https://algorithms-empathic-wolverine.cfapps.io/fibonacciseries?resultCount=7
  
 
