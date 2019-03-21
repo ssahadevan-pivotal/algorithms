@@ -13,3 +13,6 @@ target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/create
 target/surefire-reports/com.ss.algorithms.AlgorithmsApplicationTests.txt
 target/surefire-reports/TEST-com.ss.algorithms.AlgorithmsApplicationTests.xml
 target/maven-archiver/pom.properties
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/com.ss/algorithms/pom.properties
+target/classes/META-INF/maven/com.ss/algorithms/pom.xml
