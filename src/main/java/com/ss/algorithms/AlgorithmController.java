@@ -13,7 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 // import hello.Model;
 // import hello.RequestParam;
-
+/* 
+ * @author: Sharath Sahadevan
+ * @date:   March 2019
+ */
 
 @RestController
 public class AlgorithmController {
@@ -68,7 +71,7 @@ public class AlgorithmController {
 	    }
 	    
 	    @GetMapping("/fibonacciseries")
-	    public String getfibonacciseries(@RequestParam(value="resultCount", defaultValue="10") String resultCount ) 
+	    public String getfibonacciseries(@RequestParam(value="resultCount", defaultValue="5") String resultCount ) 
 	    {	             
 	    	int count = Integer.parseInt( resultCount ) ;
 	    	//int secondVal = Integer.parseInt( secondValue ) ;
@@ -97,6 +100,46 @@ public class AlgorithmController {
 	    	
 			//System.out.println( "Result is " + arithmeticClass.getResult());
 			return (  "Fibonacci series for " + resultCount + " numbers is " + result );
+			
+	    	
+	    }
+	    
+	    @GetMapping("/geometricseries")
+	    public String getgeometricseries(
+	    		 @RequestParam(value="firstValue", defaultValue="3") String firstValue 
+                 ,@RequestParam(value="secondValue", defaultValue="2") String secondValue
+	    		 , @RequestParam(value="resultCount", defaultValue="5") String resultCount 
+	    		) 
+	    {	
+	    	
+	    	String usage="Usage: http://localhost:8080/geometricseries?firstValue=3&secondValue=3&resultcount=5" ;
+	    	
+	    	int firstVal = Integer.parseInt( firstValue ) ;
+	    	int secondVal = Integer.parseInt( secondValue ) ;
+	    	int count = Integer.parseInt( resultCount ) ;
+	    	
+	    	String result = firstValue ;
+	    	Arithmetic arithmetic = null ;
+	    	String operator="multiply";
+	    	
+	    	
+	    	while ( count > 0 )
+	    	{
+	    		try {
+					arithmetic= new Arithmetic( firstVal, secondVal , operator );
+					firstVal = arithmetic.getResult() ;
+					
+					result = result + ", " + arithmetic.getResult()  ;
+					count-- ; 
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return usage;
+				}
+	    	}
+	    	
+			//System.out.println( "Result is " + arithmeticClass.getResult());
+			return (  "Geometric series for " + resultCount + " numbers is " + result );
 			
 	    	
 	    }
