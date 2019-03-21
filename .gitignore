@@ -12,3 +12,4 @@ target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.l
 target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
 target/surefire-reports/com.ss.algorithms.AlgorithmsApplicationTests.txt
 target/surefire-reports/TEST-com.ss.algorithms.AlgorithmsApplicationTests.xml
+target/maven-archiver/pom.properties
