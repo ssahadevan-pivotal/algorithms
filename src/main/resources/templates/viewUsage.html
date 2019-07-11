@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+
+   
+</head>
+
+<body>
+    <div> 
+        <h2>
+            <span th:text=" ${Usage}"></span>
+        </h2>
+    </div>
+     <div>
+    <li>
+    https://algorithms-empathic-wolverine.cfapps.io/arithmetic?firstValue=100&secondValue=5&operator=multiply
+    </li>
+    <li>
+    https://algorithms-empathic-wolverine.cfapps.io/fibonacciseries?resultCount=7
+    </li>
+    <li>
+       https://algorithms-empathic-wolverine.cfapps.io/max?firstValue=100&secondValue=5
+    </li>
+    <li>
+       https://algorithms-empathic-wolverine.cfapps.io/geometricseries?firstValue=3&secondValue=2&resultCount=7
+    </li>
+    <li>
+        Sample Usage: http://localhost:8080/arithmetic?firstValue=15&secondValue=5&operator=add"
+    </li>
+    </div>
+</body>
+</html>
